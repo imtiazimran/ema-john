@@ -1,5 +1,6 @@
 import React from 'react';
 import './Cart.css'
+import { Link } from 'react-router-dom';
 
 const Cart = ({ cart }) => {
     let totalPrice = 0
@@ -28,7 +29,7 @@ const Cart = ({ cart }) => {
             </div>
             <div className="cartBtn">
                 <button> Clear Cart</button>
-                <button> Review Order</button>
+               <button><Link className='OrderReviewBtn' to="/order_review"> Review Order</Link></button> 
             </div>
         </div>
 
