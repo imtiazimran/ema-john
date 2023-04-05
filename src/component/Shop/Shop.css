@@ -1,0 +1,13 @@
+.mainContainer{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    padding-left: 100px;
+}
+.shoppingContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    height: 500px;
+}

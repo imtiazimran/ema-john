@@ -1,0 +1,22 @@
+.cartContainer{
+    background: rgba(255, 153, 0, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    height: 92vh;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+.cartDetails{
+    text-align: left;
+    padding-left: 23px;
+}
+.cartBtn button{
+    width: 80%;
+    margin-top: 20px;
+    background: #FF9900;
+    color: #fff;
+}
+.cartBtn button:first-child{
+    background: #FF3030;
+}
