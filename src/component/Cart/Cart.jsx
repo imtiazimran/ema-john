@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Children } from 'react';
 import './Cart.css'
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt  } from '@fortawesome/free-solid-svg-icons'
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, deleteCart, children }) => {
     let totalPrice = 0
     let totalShipping = 0
     let quantity = 0
@@ -20,7 +21,7 @@ const Cart = ({ cart }) => {
     return (
         <div>
             <h4>Order Summary</h4>
-            <div className='cartDetails'>
+            <div className="cartDetails">
                 <p>Selected Item: {quantity}</p>
                 <p>Total Price: ${totalPrice}</p>
                 <p>Total Shipping Charge: ${totalShipping}</p>
@@ -28,8 +29,8 @@ const Cart = ({ cart }) => {
                 <h5>Grand Total: ${granTotal}</h5>
             </div>
             <div className="cartBtn">
-                <button> Clear Cart</button>
-               <button><Link className='OrderReviewBtn' to="/order_review"> Review Order</Link></button> 
+                <button onClick={deleteCart}> Clear Cart <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></button>
+                {children}
             </div>
         </div>
 

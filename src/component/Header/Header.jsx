@@ -1,7 +1,8 @@
 import React from 'react';
 import './Header.css'
 import logo from '../../../images/Logo.svg'
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 
 const Header = () => {
@@ -9,10 +10,10 @@ const Header = () => {
         <nav className='header'>
             <Link to='/'><img src={logo} alt="" /></Link>
             <div>
-                <Link to="/">Shop</Link>
-                <Link to="/order_review">Order Review</Link>
-                <Link to="/Inventory">Manage Inventory</Link>
-                <Link to="/Log-In">Log-In</Link>
+                <ActiveLink to="/">Shop</ActiveLink>
+                <ActiveLink to="/order_review">Order Review</ActiveLink>
+                <ActiveLink to="/Inventory">Manage Inventory</ActiveLink>
+                <ActiveLink to="/Log-In">Log-In</ActiveLink>
             </div>
         </nav>
     );

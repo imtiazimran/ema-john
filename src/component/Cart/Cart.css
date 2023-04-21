@@ -24,3 +24,6 @@
 .cartBtn button:first-child{
     background: #FF3030;
 }
+.d-none{
+    display: none;
+}
