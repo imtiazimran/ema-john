@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css'
 import logo from '../../../images/Logo.svg'
 import { Link} from 'react-router-dom';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import { AuthContext } from '../../firebase/AuthProvider';
 
 
 const Header = () => {
+    const {user} = useContext(AuthContext)
     return (
         <nav className='header'>
             <Link to='/'><img src={logo} alt="" /></Link>
@@ -15,6 +17,7 @@ const Header = () => {
                 <ActiveLink to="/Inventory">Manage Inventory</ActiveLink>
                 <ActiveLink to="/login">Log In</ActiveLink>
                 <ActiveLink to="/signup">Sign Up</ActiveLink>
+                {user && <span>Welcome Back {user.email}</span>}
             </div>
         </nav>
     );

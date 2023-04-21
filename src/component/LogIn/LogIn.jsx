@@ -2,10 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const LogIn = () => {
+    const handleSubmit = e =>{
+        e.preventDefault()
+        const form = e.target
+        const email = form.email.value
+        const password  = form.password.value
+        
+    }
     return (
         <div className='form-container'>
             <h2 className="form-title"> Login</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form-control">
                     <label htmlFor="Email">Email</label>
                     <input type="email" name="email" id="" />

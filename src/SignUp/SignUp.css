@@ -4,7 +4,10 @@
     border: 1px solid #95A0A7;
     border-radius: 8px;
 }
-
+.form-container p{
+    text-align: center;
+    color: rgb(191, 20, 20);
+}
 .form-title {
     text-align: center;
     font-style: normal;

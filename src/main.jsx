@@ -13,11 +13,12 @@ import Inventory from './component/Inventory/Inventory';
 import LogIn from './component/LogIn/LogIn';
 import LoadProducts from './LoadCartProducts/LoadCartProduct';
 import SignUp from './SignUp/SignUp';
+import AuthProvider from './firebase/AuthProvider';
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App></App>,
-    children:[
+    children: [
       {
         path: '/',
         element: <Shop></Shop>
@@ -44,12 +45,14 @@ const router = createBrowserRouter([
         element: <SignUp></SignUp>
       }
     ]
-    
+
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )
