@@ -1,0 +1,74 @@
+.form-container {
+    width: 500px;
+    margin: 40px auto;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+}
+
+.form-title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+}
+
+.form-control {
+    padding: 0 50px;
+    color: #2A414F;
+    margin-bottom: 20px;
+}
+
+.form-control label {
+    display: block;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.0015em;
+    margin-bottom: 10px;
+}
+
+.form-control input {
+    width: 390px;
+    height: 50px;
+    border: 1px solid #95A0A7;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.form-control p {
+    text-align: center;
+}
+.form-control a{
+    color: #FF9900;
+}
+
+.form-btn {
+    margin-top: 44px;
+    width: 410px;
+    height: 50px;
+    background: rgba(255, 153, 0, 0.3);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-btn:hover {
+    background: rgba(255, 153, 0, 0.5);
+}
+
+.google-login {
+    background-color: #fff;
+    border: 1px solid #95A0A7;
+    border-radius: 5px;
+}
+
+.google-login img {
+    width: 32px;
+    height: 32px;
+}

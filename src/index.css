@@ -1,3 +1,9 @@
+/* Import the Lato font family */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/* Apply the font family to an element */
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -14,7 +20,8 @@
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh; 
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {

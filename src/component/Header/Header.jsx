@@ -13,7 +13,7 @@ const Header = () => {
                 <ActiveLink to="/">Shop</ActiveLink>
                 <ActiveLink to="/order_review">Order Review</ActiveLink>
                 <ActiveLink to="/Inventory">Manage Inventory</ActiveLink>
-                <ActiveLink to="/Log-In">Log In</ActiveLink>
+                <ActiveLink to="/login">Log In</ActiveLink>
                 <ActiveLink to="/signup">Sign Up</ActiveLink>
             </div>
         </nav>
