@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './SignUp.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../firebase/AuthProvider';
 
 const SignUp = () => {
     const [error, setError] = useState('')
+    const {createUser} = useContext(AuthContext)
     const handleSubmit = e =>{
         e.preventDefault()
         const form = e.target
@@ -18,6 +20,15 @@ const SignUp = () => {
             setError('password should be 6 charecter or more')
             return
         }else{setError('')}
+        createUser(email, password)
+        .then(result =>{
+            const loggedUser = result.user
+            console.log(loggedUser)
+            form.reset()
+        })
+        .catch(error =>{
+            setError(error.message)
+        })
     }
     return (
         <div className='form-container'>
@@ -28,15 +39,15 @@ const SignUp = () => {
             <form onSubmit={handleSubmit}>
                 <div className="form-control">
                     <label htmlFor="Email">Email</label>
-                    <input type="email" name="email" id="" />
+                    <input type="email" name="email" required />
                 </div>
                 <div className="form-control">
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="" />
+                    <input type="password" name="password" required />
                 </div>
                 <div className="form-control">
                     <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input type="password" name="confirmPassword" id="" />
+                    <input type="password" name="confirmPassword" required />
                 </div>
                 <div className="form-control">
                     <button className='form-btn'>Sign Up</button>

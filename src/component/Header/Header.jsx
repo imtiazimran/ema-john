@@ -7,7 +7,16 @@ import { AuthContext } from '../../firebase/AuthProvider';
 
 
 const Header = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
+    const handleLogOut = () =>{
+        logOut()
+        .then(()=>{
+            alert('sign out successful')
+        })
+        .catch(error =>{
+            alert(error.message)
+        })
+    }
     return (
         <nav className='header'>
             <Link to='/'><img src={logo} alt="" /></Link>
@@ -17,7 +26,7 @@ const Header = () => {
                 <ActiveLink to="/Inventory">Manage Inventory</ActiveLink>
                 <ActiveLink to="/login">Log In</ActiveLink>
                 <ActiveLink to="/signup">Sign Up</ActiveLink>
-                {user && <span>Welcome Back {user.email}</span>}
+                {user && <span>Welcome Back {user.email} <button className='signOut' onClick={handleLogOut}>Sign Out</button></span>  }
             </div>
         </nav>
     );

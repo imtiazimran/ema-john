@@ -13,6 +13,8 @@ import Inventory from './component/Inventory/Inventory';
 import LogIn from './component/LogIn/LogIn';
 import LoadProducts from './LoadCartProducts/LoadCartProduct';
 import SignUp from './SignUp/SignUp';
+import CheckOut from './component/CheckOut/CheckOut'
+import PrivetRoute from './PriveteRoute/PriveteRoute'
 import AuthProvider from './firebase/AuthProvider';
 const router = createBrowserRouter([
   {
@@ -43,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <SignUp></SignUp>
+      },
+      {
+        path: '/checkOut',
+        element: <PrivetRoute><CheckOut></CheckOut></PrivetRoute>
       }
     ]
 
