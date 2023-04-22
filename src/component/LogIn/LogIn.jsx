@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../firebase/AuthProvider';
 
 const LogIn = () => {
     const [error, setError] = useState('')
     const { signIn } = useContext(AuthContext)
     const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
     const handleSubmit = e => {
         e.preventDefault()
         const form = e.target
@@ -21,7 +23,7 @@ const LogIn = () => {
                 const loggedUser = result.user
                 console.log(loggedUser)
                 form.reset()
-                navigate('/')
+                navigate(from)
             })
             .catch(error => {
                 setError(error.message)
@@ -30,6 +32,9 @@ const LogIn = () => {
     return (
         <div className='form-container'>
             <h2 className="form-title"> Login</h2>
+            {
+                error && <p>{error}</p>
+            }
             <form onSubmit={handleSubmit}>
                 <div className="form-control">
                     <label htmlFor="Email">Email</label>
